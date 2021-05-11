@@ -16,7 +16,7 @@ public class AccountsTest {
 
 @Test
 public void testaddAccountByAgent() throws CustomException{
-   Accounts a = new Accounts("Uday","21","Faridabad","Haryana",12100,"R","Uday","Himanshu");
+   Accounts a = new Accounts("Uday","Arkham","Faridabad","Haryana",12100,"R","Uday","Uday");
 	AccountsDao adao =new AccountsDaoImpl();
 	adao.accountCreation(a);
 	
@@ -26,7 +26,7 @@ public void testaddAccountByAgent() throws CustomException{
 }
 @Test
 public void testaddAccountByInsurer() throws CustomException{
-	Accounts a1 = new Accounts("Dwight","47","Gurgaon","Haryana",12150,"P","Dwight","Dwight");
+	Accounts a1 = new Accounts("Sultan","KhauGali","Gurgaon","Haryana",12150,"G","Sultan","Sultan");
 	AccountsDao adao =new AccountsDaoImpl();
 	adao.accountCreation(a1);
 	
@@ -35,7 +35,7 @@ public void testaddAccountByInsurer() throws CustomException{
 }
 @Test
 public void testaddAccountByAdmin() throws CustomException{
-	Accounts a2 = new Accounts("Barney","86","Queens","NewYork",11150,"A","Barney","Sultan");
+	Accounts a2 = new Accounts("Himanshu","SkyLines","Queens","NewYork",11150,"A","Himanshu","Drake");
 	AccountsDao adao =new AccountsDaoImpl();
 	adao.accountCreation(a2);
 	

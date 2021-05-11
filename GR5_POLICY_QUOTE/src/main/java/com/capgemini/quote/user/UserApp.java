@@ -24,7 +24,6 @@ public class UserApp {
 	public static void main(String[] args) {
 
 		PropertyConfigurator.configure("log4j.properties"); // Logger File Properties
-		//hello git
 		// Service Layer Objects
 		UserService uServ = new UserServiceImpl();
 		AccountsService aServ = new AccountsServiceImpl();
@@ -127,15 +126,20 @@ public class UserApp {
 
 							case 3: // View Policy Details
 								try {
-									Accounts account = aServ.getAccountsByUsername(userRole.getUserName());
-									List<Policy> myPolicy = vServ.getPolicybyAccNo(account.getAccountNumber());
-									for (Policy mp : myPolicy) {
-										System.out.println(mp);
-									}
-								} catch (Exception e) {
-									System.err.println("No Policy or Account Found");
-								}
-								break;
+                                    Accounts account = aServ.getAccountsByUsername(userRole.getUserName());
+                                    List<Policy> myPolicy = vServ.getPolicybyAccNo(account.getAccountNumber());
+                                    if(!myPolicy.isEmpty()){
+                                    for (Policy mp : myPolicy) {
+                                        System.out.println(mp);
+                                    }
+                                    }
+                                    else {
+                                        System.err.println("No Policy been attached to Account.");
+                                    }
+                                } catch (Exception e) {
+                                    System.err.println("No Policy or Account Found");
+                                }
+                                break;
 							default:
 								System.err.println("Wrong Input");
 								break;
@@ -300,18 +304,26 @@ public class UserApp {
 										System.out.println(acountc);
 									}
 								} else
-									System.err.println("No Account found");
+									System.err.println("No Account found that is made by you");
 								break;
 
 							case 5: // View Policy Details of Insurers
 								List<Accounts> accountList1 = aServ.getAccountListByCreatedBy(userRole.getUserName());
-								for (Accounts account1 : accountList1) {
-									List<Policy> polList = vServ.getPolicybyAccNo(account1.getAccountNumber());
-									for (Policy pl : polList) {
-										System.out.println(pl);
-									}
-								}
-								break;
+                                if(!accountList1.isEmpty()) {
+                                for (Accounts ac : accountList1) {
+                                    List<Policy> polList = vServ.getPolicybyAccNo(ac.getAccountNumber());
+                                    if(!polList.isEmpty()) {
+                                    for (Policy pl : polList) {
+                                        System.out.println(pl);
+                                    }
+                                    }else {
+                                        System.err.println("No Policy found that is made by you");
+                                    }
+                                }
+                                }else {
+                                    System.err.println("Account needs to be created first");
+                                }
+                                break;
 
 							case 6: // Generate Report
 								System.out.println("Choose Report Type>>");
@@ -500,13 +512,21 @@ public class UserApp {
 
 							case 4: // View Policy Details of my Insurers
 								List<Accounts> accountList1 = aServ.getAccountListByCreatedBy(userRole.getUserName());
-								for (Accounts ac : accountList1) {
-									List<Policy> polList = vServ.getPolicybyAccNo(ac.getAccountNumber());
-									for (Policy pl : polList) {
-										System.out.println(pl);
-									}
-								}
-								break;
+                                if(!accountList1.isEmpty()) {
+                                for (Accounts ac : accountList1) {
+                                    List<Policy> polList = vServ.getPolicybyAccNo(ac.getAccountNumber());
+                                    if(!polList.isEmpty()) {
+                                    for (Policy pl : polList) {
+                                        System.out.println(pl);
+                                    }
+                                    }else {
+                                        System.err.println("No Policy Found");
+                                    }
+                                }
+                                }else {
+                                    System.err.println("Account needs to be created first");
+                                }
+                                break;
 
 							default:
 								System.err.println("Wrong Input");

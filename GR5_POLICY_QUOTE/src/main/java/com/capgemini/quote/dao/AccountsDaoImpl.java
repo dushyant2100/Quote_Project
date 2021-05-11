@@ -39,24 +39,31 @@ public class AccountsDaoImpl implements AccountsDao {
 	//Get Account details by UserName
 	@Override
 	public Accounts getAccountsByUsername(String userName, String userRole) {
+		try {
 		String qstr = "select accounts from Accounts accounts where accounts.userName=:pUserName";
 		TypedQuery<Accounts> query = em.createQuery(qstr, Accounts.class);
 		query.setParameter("pUserName", userName);
 		Accounts account = query.getSingleResult();
 		myLogger.info("Account Information fetched by Username");
-		return account;
+		return account;}
+		catch(Exception e) {
+			return null;
+		}
 	}
 
 	//Get Account by UserName
 	@Override
 	public Accounts getAccountsByUsername(String userName) throws CustomException {
-
+		try {
 		String qstr = "select accounts from Accounts accounts where accounts.userName=:pUsername";
 		TypedQuery<Accounts> query = em.createQuery(qstr, Accounts.class);
 		query.setParameter("pUsername", userName);
 		Accounts account = query.getSingleResult();
 		myLogger.info("Account Information fetched by Username");
-		return account;
+		return account;}
+		catch(Exception e) {
+			return null;
+		}
 	}
 	
     //Get List of Account By created By

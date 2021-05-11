@@ -22,7 +22,7 @@ public class ViewTest {
 	@Test
 	public void testViewPolicy() throws CustomException{
 		ViewDao vDao = new ViewDaoImpl();
-		long polNo = 100008; // User Input
+		long polNo = 100001; // User Input
 		Policy pol = new Policy();
 		pol = vDao.getPolicyByPolicyNo(polNo);
 		EntityManager em = JPAUtil.getEntityManager();
@@ -34,7 +34,7 @@ public class ViewTest {
 		EntityManager em = JPAUtil.getEntityManager();
 		
 		ViewDao vDao = new ViewDaoImpl();
-		long polNo = 100008;
+		long polNo = 100001;
 		Policy pol = new Policy();
 		pol = vDao.getPolicyByPolicyNo(polNo);
 		

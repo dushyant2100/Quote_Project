@@ -32,7 +32,7 @@ public class PolicyTest {
 
 	@Test
 	public void testCreatePolicy() {
-		Policy pc = new Policy(1200,1000000027);
+		Policy pc = new Policy(3200,1000000002);
 		PolicyDao pdao = new PolicyDaoImpl(); 
 		pdao.createPolicy(pc);
 		EntityManager em = JPAUtil.getEntityManager();
@@ -44,7 +44,7 @@ public class PolicyTest {
 	public void testPolicyQuestions() {
 		EntityManager em = JPAUtil.getEntityManager();
 		String busSegId = "B"; // UserInput
-		String qStr = "SELECT pQ FROM PolicyQuestion pQ WHERE pQ.BusSegId=:pbussegid";
+		String qStr = "SELECT pQ FROM PolicyQuestion pQ WHERE pQ.busSegId=:pbussegid";
 		TypedQuery<PolicyQuestion> query = em.createQuery(qStr, PolicyQuestion.class);
 		query.setParameter("pbussegid", busSegId);
 		List<PolicyQuestion> pQL = query.getResultList();
@@ -55,11 +55,11 @@ public class PolicyTest {
 	@Test
 	public void testCalculatePremium() {
 		PolicyDao pdao = new PolicyDaoImpl();
-		long policyNumber = 100008; // Change Policy number here(User Input)
+		long policyNumber = 100002; // Change Policy number here(User Input)
 		
 		double policypremium = pdao.calculatePremium(policyNumber);
 		
-		assertTrue(1600.0 == policypremium);
+		assertTrue(3200.0 == policypremium);
 	}
 
 }

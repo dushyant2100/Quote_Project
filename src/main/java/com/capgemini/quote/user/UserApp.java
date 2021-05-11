@@ -129,8 +129,13 @@ public class UserApp {
 								try {
 									Accounts account = aServ.getAccountsByUsername(userRole.getUserName());
 									List<Policy> myPolicy = vServ.getPolicybyAccNo(account.getAccountNumber());
+									if(!myPolicy.isEmpty()){
 									for (Policy mp : myPolicy) {
 										System.out.println(mp);
+									}
+									}
+									else {
+										System.err.println("No Policy been attached to Account.");
 									}
 								} catch (Exception e) {
 									System.err.println("No Policy or Account Found");
@@ -300,16 +305,24 @@ public class UserApp {
 										System.out.println(acountc);
 									}
 								} else
-									System.err.println("No Account found");
+									System.err.println("No Account found created by you.");
 								break;
 
 							case 5: // View Policy Details of Insurers
 								List<Accounts> accountList1 = aServ.getAccountListByCreatedBy(userRole.getUserName());
-								for (Accounts account1 : accountList1) {
-									List<Policy> polList = vServ.getPolicybyAccNo(account1.getAccountNumber());
+								if(!accountList1.isEmpty()) {
+								for (Accounts ac : accountList1) {
+									List<Policy> polList = vServ.getPolicybyAccNo(ac.getAccountNumber());
+									if(!polList.isEmpty()) {
 									for (Policy pl : polList) {
 										System.out.println(pl);
 									}
+									}else {
+										System.err.println("No Policy Found created by you.");
+									}
+								}
+								}else {
+									System.err.println("Account to be created first by you.");
 								}
 								break;
 
@@ -495,16 +508,24 @@ public class UserApp {
 										System.out.println(acountc);
 									}
 								} else
-									System.err.println("No Account found");
+									System.err.println("No Account found created by you.");
 								break;
 
 							case 4: // View Policy Details of my Insurers
 								List<Accounts> accountList1 = aServ.getAccountListByCreatedBy(userRole.getUserName());
+								if(!accountList1.isEmpty()) {
 								for (Accounts ac : accountList1) {
 									List<Policy> polList = vServ.getPolicybyAccNo(ac.getAccountNumber());
+									if(!polList.isEmpty()) {
 									for (Policy pl : polList) {
 										System.out.println(pl);
 									}
+									}else {
+										System.err.println("No Policy Found created by you.");
+									}
+								}
+								}else {
+									System.err.println("Account to be created first by you.");
 								}
 								break;
 

@@ -19,7 +19,7 @@ public class UserTest {
 	public void testLoginCheck() throws CustomException {
 		UserDao udao = new UserDaoImpl();
 		UserRole u = new UserRole();
-		u = udao.loginCheck("Himanshu", "Himanshu123");
+		u = udao.loginCheck("Drake", "Drake@123");
 		EntityManager em = JPAUtil.getEntityManager();
 		assertTrue(em.contains(u));	
 	}
@@ -28,7 +28,7 @@ public class UserTest {
 	public void testLoginCheck2() throws CustomException  {
 		UserDao udao = new UserDaoImpl();
 		UserRole y = new UserRole();
-		y = udao.loginCheck("Diya", "Diya123");
+		y = udao.loginCheck("Dushyant", "Dushyant@123");
 		EntityManager em = JPAUtil.getEntityManager();
 		assertTrue(em.contains(y));	
 	}

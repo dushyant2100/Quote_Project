@@ -1,0 +1,91 @@
+2021-05-12 01:11:25 WARN  HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+  2021-05-12 01:11:25 WARN  HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+  2021-05-12 01:11:25 WARN  HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+  2021-05-12 01:11:25 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: JPA-PU
+	...]
+  2021-05-12 01:11:26 INFO  Version:54 - HHH000412: Hibernate Core {4.3.10.Final}
+  2021-05-12 01:11:26 INFO  Environment:239 - HHH000206: hibernate.properties not found
+  2021-05-12 01:11:26 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+  2021-05-12 01:11:26 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+  2021-05-12 01:11:26 WARN  DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+  2021-05-12 01:11:26 INFO  DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+  2021-05-12 01:11:26 INFO  DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=Group5, password=****}
+  2021-05-12 01:11:26 INFO  DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+  2021-05-12 01:11:26 INFO  DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+  2021-05-12 01:11:27 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+  2021-05-12 01:11:28 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+  2021-05-12 01:11:28 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+  2021-05-12 01:11:28 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+  2021-05-12 01:11:28 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+  2021-05-12 01:11:28 INFO  TableMetadata:65 - HHH000261: Table found: GROUP5.ACCOUNTS
+  2021-05-12 01:11:28 INFO  TableMetadata:66 - HHH000037: Columns: [insuredname, accountnumber, createdby, insuredcity, insuredstate, insuredstreet, insuredzip, businesssegment, username]
+  2021-05-12 01:11:28 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_userroleaccounts]
+  2021-05-12 01:11:28 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c007500]
+  2021-05-12 01:11:28 INFO  TableMetadata:65 - HHH000261: Table found: GROUP5.BUSINESSSEGMENT
+  2021-05-12 01:11:28 INFO  TableMetadata:66 - HHH000037: Columns: [bussegname, bussegid, bussegseq]
+  2021-05-12 01:11:28 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+  2021-05-12 01:11:28 INFO  TableMetadata:69 - HHH000126: Indexes: [pk_bussegid]
+  2021-05-12 01:11:28 INFO  TableMetadata:65 - HHH000261: Table found: GROUP5.POLICY
+  2021-05-12 01:11:28 INFO  TableMetadata:66 - HHH000037: Columns: [accountnumber, policynumber, policypremium]
+  2021-05-12 01:11:28 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_policyaccounts]
+  2021-05-12 01:11:28 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c007510]
+  2021-05-12 01:11:28 INFO  TableMetadata:65 - HHH000261: Table found: GROUP5.POLICYDETAILS
+  2021-05-12 01:11:28 INFO  TableMetadata:66 - HHH000037: Columns: [policydetailsid, answer, policynumber, qid]
+  2021-05-12 01:11:28 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_policypolicydetails]
+  2021-05-12 01:11:28 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c007545]
+  2021-05-12 01:11:28 INFO  TableMetadata:65 - HHH000261: Table found: GROUP5.USERROLE
+  2021-05-12 01:11:28 INFO  TableMetadata:66 - HHH000037: Columns: [rolecode, password, username]
+  2021-05-12 01:11:28 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+  2021-05-12 01:11:28 INFO  TableMetadata:69 - HHH000126: Indexes: [pk_username]
+  2021-05-12 01:11:28 INFO  TableMetadata:65 - HHH000261: Table found: GROUP5.POLICYQUESTION
+  2021-05-12 01:11:28 INFO  TableMetadata:66 - HHH000037: Columns: [polqseq, polqid, polqans1, polans1wtg, polqans2, polqans3, polans2wtg, polans3wtg, bussegid, polqdesc]
+  2021-05-12 01:11:28 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_bussegid]
+  2021-05-12 01:11:28 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c007528]
+  2021-05-12 01:11:28 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+  2021-05-12 01:12:59 WARN  HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+  2021-05-12 01:12:59 WARN  HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+  2021-05-12 01:12:59 WARN  HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+  2021-05-12 01:12:59 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: JPA-PU
+	...]
+  2021-05-12 01:12:59 INFO  Version:54 - HHH000412: Hibernate Core {4.3.10.Final}
+  2021-05-12 01:12:59 INFO  Environment:239 - HHH000206: hibernate.properties not found
+  2021-05-12 01:12:59 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+  2021-05-12 01:12:59 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+  2021-05-12 01:12:59 WARN  DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+  2021-05-12 01:12:59 INFO  DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+  2021-05-12 01:12:59 INFO  DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=Group5, password=****}
+  2021-05-12 01:12:59 INFO  DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+  2021-05-12 01:12:59 INFO  DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+  2021-05-12 01:13:00 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+  2021-05-12 01:13:01 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+  2021-05-12 01:13:01 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+  2021-05-12 01:13:01 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+  2021-05-12 01:13:01 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+  2021-05-12 01:13:01 INFO  TableMetadata:65 - HHH000261: Table found: GROUP5.ACCOUNTS
+  2021-05-12 01:13:01 INFO  TableMetadata:66 - HHH000037: Columns: [insuredname, accountnumber, createdby, insuredcity, insuredstate, insuredstreet, insuredzip, businesssegment, username]
+  2021-05-12 01:13:01 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_userroleaccounts]
+  2021-05-12 01:13:01 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c007500]
+  2021-05-12 01:13:01 INFO  TableMetadata:65 - HHH000261: Table found: GROUP5.BUSINESSSEGMENT
+  2021-05-12 01:13:01 INFO  TableMetadata:66 - HHH000037: Columns: [bussegname, bussegid, bussegseq]
+  2021-05-12 01:13:01 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+  2021-05-12 01:13:01 INFO  TableMetadata:69 - HHH000126: Indexes: [pk_bussegid]
+  2021-05-12 01:13:01 INFO  TableMetadata:65 - HHH000261: Table found: GROUP5.POLICY
+  2021-05-12 01:13:01 INFO  TableMetadata:66 - HHH000037: Columns: [accountnumber, policynumber, policypremium]
+  2021-05-12 01:13:01 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_policyaccounts]
+  2021-05-12 01:13:01 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c007510]
+  2021-05-12 01:13:01 INFO  TableMetadata:65 - HHH000261: Table found: GROUP5.POLICYDETAILS
+  2021-05-12 01:13:01 INFO  TableMetadata:66 - HHH000037: Columns: [policydetailsid, answer, policynumber, qid]
+  2021-05-12 01:13:01 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_policypolicydetails]
+  2021-05-12 01:13:01 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c007545]
+  2021-05-12 01:13:01 INFO  TableMetadata:65 - HHH000261: Table found: GROUP5.USERROLE
+  2021-05-12 01:13:01 INFO  TableMetadata:66 - HHH000037: Columns: [rolecode, password, username]
+  2021-05-12 01:13:01 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+  2021-05-12 01:13:01 INFO  TableMetadata:69 - HHH000126: Indexes: [pk_username]
+  2021-05-12 01:13:01 INFO  TableMetadata:65 - HHH000261: Table found: GROUP5.POLICYQUESTION
+  2021-05-12 01:13:01 INFO  TableMetadata:66 - HHH000037: Columns: [polqseq, polqid, polqans1, polans1wtg, polqans2, polqans3, polans2wtg, polans3wtg, bussegid, polqdesc]
+  2021-05-12 01:13:01 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_bussegid]
+  2021-05-12 01:13:01 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c007528]
+  2021-05-12 01:13:01 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+  
